@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <tooltip-component message="This is the logo of our brand!">
+        <h2>Logo</h2>
+      </tooltip-component>
+
+      <navbar-component
+        items='[
+            {"page": "Home", "route": "/"},
+            {"page": "About", "route": "/about"}, 
+            {"page": "Services", "route": "/services"},
+            {"page": "Pricing", "route": "/pricing"},
+            {"page": "Contact", "route": "/contact"}     
+            ]'
+      ></navbar-component>
+    </header>
+
+    <section>
+      <current-date></current-date>
+
+      <table-component
+        data='[
+      {"id": 1, "name": "John Doe", "location": "New York"},
+      {"id": 2, "name": "Jane Smith", "location": "London"},
+      {"id": 3, "name": "Mike Johnson", "location": "Sydney"},
+      {"id": 4, "name": "Sarah Lee", "location": "Tokyo"},
+      {"id": 5, "name": "Chris Brown", "location": "Berlin"},
+      {"id": 6, "name": "Nancy Wilson", "location": "Paris"},
+      {"id": 7, "name": "Paul White", "location": "Toronto"},
+      {"id": 8, "name": "Laura Davis", "location": "Rome"},
+      {"id": 9, "name": "Kevin Miller", "location": "San Francisco"},
+      {"id": 10, "name": "Emma Garcia", "location": "Madrid"}
+  ]'
+      ></table-component>
+
+      <button id="open-modal">Open Modal</button>
+
+      <modal-component open="false">
+        <div class="modal-overlay">
+          <div class="modal-content">
+            <h2>Confirm Payment</h2>
+            <br />
+            <p>
+              Are you sure you want to proceed with this payment flow?
+              <br />
+              Keep in mind you wouldn't be able to change it later.
+            </p>
+            <button id="close-modal">Confirm</button>
+          </div>
+        </div>
+      </modal-component>
+    </section>
+  </body>
+  <script>
+    const openModalButton = document.getElementById("open-modal")
+    const closeModalButton = document.getElementById("close-modal")
+    const modalComponent = document.querySelector("modal-component")
+
+    openModalButton.addEventListener("click", () => {
+      modalComponent.setAttribute("open", true)
+    })
+
+    closeModalButton.addEventListener("click", () => {
+      modalComponent.setAttribute("open", false)
+    })
+  </script>
+</html>

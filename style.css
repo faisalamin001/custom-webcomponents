@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+current-date {
+  font-size: 30px;
+  font-family: monospace;
+  font-weight: 900;
+  background: black;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+navbar-component ul {
+  padding: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+navbar-component ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+}
+
+navbar-component ul li a:hover {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+.modal-overlay {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(86, 86, 86, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  border: 1px solid gray;
+  background: white;
+  padding: 30px;
+  color: black;
+  border-radius: 10px;
+}
+
+#close-modal {
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Tooltip component styles */
+.tooltip-component {
+  position: relative; /* Needed for tooltip positioning */
+  display: inline-block; /* Allow tooltip next to other content */
+}
+
+.tooltip-text {
+  position: absolute;
+  background-color: #ddd;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Prevent interaction with tooltip itself */
+  z-index: 10; /* Ensure tooltip appears above other elements */
+}
+
+.tooltip-text.show {
+  opacity: 1;
+}
+
+.tooltip-component:hover .tooltip-text {
+  display: block; /* Show tooltip on hover */
+  top: 120%; /* Position tooltip below the component */
+  left: 50%;
+  transform: translateX(-50%); /* Center tooltip horizontally */
+}
+
+/* Tooltip component styles */
+.tooltip-component {
+  position: relative; /* Needed for tooltip positioning */
+  display: inline-block; /* Allow tooltip next to other content */
+}
+
+.tooltip-text {
+  /* ... other styles for the tooltip itself ... */
+}
+
+.tooltip-component:hover .tooltip-text {
+  display: block; /* Show tooltip on hover */
+  top: 120%; /* Position tooltip below the component */
+  left: 50%;
+  transform: translateX(-50%); /* Center tooltip horizontally */
+}
+table-component {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+table-component table {
+  width: 100%;
+  border: 1px solid #555; /* Medium gray border */
+}
+table-component th,
+table-component td {
+  padding: 12px;
+  border: 1px solid #555; /* Medium gray border */
+}
+table-component th {
+  background-color: #444; /* Darker gray */
+  color: #ddd; /* Light gray text */
+}
+table-component tr:nth-child(even) {
+  background-color: #3a3a3a; /* Dark gray */
+}
+table-component tr:hover {
+  background-color: #555; /* Medium gray */
+}
